@@ -24,6 +24,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSProjectile() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 // End Cross Module References
 	void AFPSProjectile::StaticRegisterNativesAFPSProjectile()
 	{
@@ -124,9 +125,17 @@ void EmptyLinkFunctionForGeneratedCodeFPSProjectile() {}
 			};
 #endif
 			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CollisionComp = { UE4CodeGen_Private::EPropertyClass::Object, "CollisionComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00200800000a001d, 1, nullptr, STRUCT_OFFSET(AFPSProjectile, CollisionComp), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(NewProp_CollisionComp_MetaData, ARRAY_COUNT(NewProp_CollisionComp_MetaData)) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ExplosionEffect_MetaData[] = {
+				{ "Category", "FX" },
+				{ "ModuleRelativePath", "Public/FPSProjectile.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ExplosionEffect = { UE4CodeGen_Private::EPropertyClass::Object, "ExplosionEffect", RF_Public|RF_Transient|RF_MarkAsNative, 0x0040000000010001, 1, nullptr, STRUCT_OFFSET(AFPSProjectile, ExplosionEffect), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(NewProp_ExplosionEffect_MetaData, ARRAY_COUNT(NewProp_ExplosionEffect_MetaData)) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ProjectileMovement,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_CollisionComp,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ExplosionEffect,
 			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 				TCppClassTypeTraits<AFPSProjectile>::IsAbstract,
@@ -146,7 +155,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFPSProjectile, 4103007678);
+	IMPLEMENT_CLASS(AFPSProjectile, 1005929616);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSProjectile(Z_Construct_UClass_AFPSProjectile, &AFPSProjectile::StaticClass, TEXT("/Script/FPSGame"), TEXT("AFPSProjectile"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSProjectile);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -9,12 +9,16 @@
 
 class UProjectileMovementComponent;
 class USphereComponent;
-
+class UParticleSystem;
 
 UCLASS()
 class AFPSProjectile : public AActor
 {
 	GENERATED_BODY()
+
+    UPROPERTY(EditDefaultsOnly, Category = "FX")
+	UParticleSystem* ExplosionEffect;
+
 
 protected:
 

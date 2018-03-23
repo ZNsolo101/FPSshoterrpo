@@ -94,6 +94,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFPSProjectile); \
 
 
 #define StealthGame_Source_FPSGame_Public_FPSProjectile_h_17_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ExplosionEffect() { return STRUCT_OFFSET(AFPSProjectile, ExplosionEffect); } \
 	FORCEINLINE static uint32 __PPO__CollisionComp() { return STRUCT_OFFSET(AFPSProjectile, CollisionComp); } \
 	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(AFPSProjectile, ProjectileMovement); }
 
