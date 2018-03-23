@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeFPSObjectiveActor() {}
 	FPSGAME_API UClass* Z_Construct_UClass_AFPSObjectiveActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_FPSGame();
+	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void AFPSObjectiveActor::StaticRegisterNativesAFPSObjectiveActor()
 	{
@@ -40,6 +42,26 @@ void EmptyLinkFunctionForGeneratedCodeFPSObjectiveActor() {}
 				{ "ModuleRelativePath", "Public/FPSObjectiveActor.h" },
 			};
 #endif
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereComp_MetaData[] = {
+				{ "Category", "Components" },
+				{ "EditInline", "true" },
+				{ "ModuleRelativePath", "Public/FPSObjectiveActor.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SphereComp = { UE4CodeGen_Private::EPropertyClass::Object, "SphereComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00200800000a0009, 1, nullptr, STRUCT_OFFSET(AFPSObjectiveActor, SphereComp), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(NewProp_SphereComp_MetaData, ARRAY_COUNT(NewProp_SphereComp_MetaData)) };
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshComp_MetaData[] = {
+				{ "Category", "Components" },
+				{ "EditInline", "true" },
+				{ "ModuleRelativePath", "Public/FPSObjectiveActor.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshComp = { UE4CodeGen_Private::EPropertyClass::Object, "MeshComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00200800000a0009, 1, nullptr, STRUCT_OFFSET(AFPSObjectiveActor, MeshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(NewProp_MeshComp_MetaData, ARRAY_COUNT(NewProp_MeshComp_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_SphereComp,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_MeshComp,
+			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 				TCppClassTypeTraits<AFPSObjectiveActor>::IsAbstract,
 			};
@@ -48,7 +70,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSObjectiveActor() {}
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00900080u,
 				nullptr, 0,
-				nullptr, 0,
+				PropPointers, ARRAY_COUNT(PropPointers),
 				nullptr,
 				&StaticCppClassTypeInfo,
 				nullptr, 0,
@@ -58,7 +80,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSObjectiveActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFPSObjectiveActor, 2938680534);
+	IMPLEMENT_CLASS(AFPSObjectiveActor, 3133977783);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSObjectiveActor(Z_Construct_UClass_AFPSObjectiveActor, &AFPSObjectiveActor::StaticClass, TEXT("/Script/FPSGame"), TEXT("AFPSObjectiveActor"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSObjectiveActor);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
