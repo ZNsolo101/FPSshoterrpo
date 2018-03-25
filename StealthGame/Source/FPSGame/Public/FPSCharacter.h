@@ -48,7 +48,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
 	UAnimSequence* FireAnimation;
 
-	UPROPERTY(BlurprintReadOnly, Category = "Gameplay")
+	UPROPERTY(BlueprintReadOnly, Category = "Gameplay")
 	bool bIsCarryingObjective;
 
 
