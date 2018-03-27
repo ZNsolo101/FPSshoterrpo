@@ -21,6 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSExtractionZone() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UDecalComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 // End Cross Module References
 	void AFPSExtractionZone::StaticRegisterNativesAFPSExtractionZone()
@@ -108,6 +109,14 @@ void EmptyLinkFunctionForGeneratedCodeFPSExtractionZone() {}
 			};
 #endif
 #if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DecalComp_MetaData[] = {
+				{ "Category", "Components" },
+				{ "EditInline", "true" },
+				{ "ModuleRelativePath", "Public/FPSExtractionZone.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DecalComp = { UE4CodeGen_Private::EPropertyClass::Object, "DecalComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00200800000a0009, 1, nullptr, STRUCT_OFFSET(AFPSExtractionZone, DecalComp), Z_Construct_UClass_UDecalComponent_NoRegister, METADATA_PARAMS(NewProp_DecalComp_MetaData, ARRAY_COUNT(NewProp_DecalComp_MetaData)) };
+#if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OverlapComp_MetaData[] = {
 				{ "Category", "Components" },
 				{ "EditInline", "true" },
@@ -116,6 +125,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSExtractionZone() {}
 #endif
 			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OverlapComp = { UE4CodeGen_Private::EPropertyClass::Object, "OverlapComp", RF_Public|RF_Transient|RF_MarkAsNative, 0x00200800000a0009, 1, nullptr, STRUCT_OFFSET(AFPSExtractionZone, OverlapComp), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(NewProp_OverlapComp_MetaData, ARRAY_COUNT(NewProp_OverlapComp_MetaData)) };
 			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_DecalComp,
 				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_OverlapComp,
 			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -136,7 +146,7 @@ void EmptyLinkFunctionForGeneratedCodeFPSExtractionZone() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFPSExtractionZone, 3271946918);
+	IMPLEMENT_CLASS(AFPSExtractionZone, 3674319181);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSExtractionZone(Z_Construct_UClass_AFPSExtractionZone, &AFPSExtractionZone::StaticClass, TEXT("/Script/FPSGame"), TEXT("AFPSExtractionZone"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSExtractionZone);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
