@@ -3,6 +3,8 @@
 #include "FPSExtractionZone.h"
 #include "Components/BoxComponent.h"
 #include "Components/DecalComponent.h"
+#include "FPSCharacter.h"
+#include "FPSGameMode.h"
 
 
 // Sets default values
@@ -15,7 +17,7 @@ AFPSExtractionZone::AFPSExtractionZone()
 	OverlapComp->SetBoxExtent(FVector(200.0f));
 	RootComponent = OverlapComp;
 
-	OverlapComp->SetHiddenInGame(false);
+	OverlapComp->SetHiddenInGame(true);
 
 	OverlapComp->OnComponentBeginOverlap.AddDynamic(this, &AFPSExtractionZone::HandleOverlap);
 
@@ -33,6 +35,16 @@ void AFPSExtractionZone::HandleOverlap(UPrimitiveComponent* OverlapComponent, AA
 
 	UE_LOG(LogTemp, Log, TEXT("Overlapped with extraction Zone!"));
 
+	AFPSCharacter* MyPawn = Cast<AFPSCharacter>(OtherActor);
+	if (MyPawn && MyPawn->bIsCarryingObjective)
+	{
+		AFPSGameMode* GM = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM)
+		{
+			GM->CompleteMission(MyPawn);
+
+		}
+	}
 
 }
 
